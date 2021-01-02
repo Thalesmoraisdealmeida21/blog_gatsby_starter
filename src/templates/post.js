@@ -4,8 +4,8 @@ import Layout from "../components/layout"
 
 import { graphql } from 'gatsby'
 
-const IndexPage = ({ data: { markdownRemark } }) => {
-    console.log(markdownRemark);
+const IndexPage = ({ data }) => {
+
     return (
         <Layout>
 
@@ -24,7 +24,7 @@ export const pageQuery = graphql`
         markdownRemark(frontmatter: { path: { eq: $path } }) {
             html
             frontmatter {
-              data
+              date
               path
               title
             }
